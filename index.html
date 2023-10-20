@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Reverser</title>
+</head>
+<body>
+    <h1>Word Reverser</h1>
+    <p>Enter a sentence to reverse:</p>
+    <input type="text" id="inputSentence" placeholder="Enter a sentence">
+    <button onclick="reverseWords()">Reverse</button>
+    <p>Reversed Sentence:</p>
+    <p id="output"></p>
+
+    <script>
+        
+        function reverseWords() {
+            
+            const sentence = document.getElementById("inputSentence").value;
+            const words = sentence.split(' ');
+            const reversedWords = [];
+
+            for (const word of words) {
+                let reversedWord = '';
+                for (let i = word.length - 1; i >= 0; i--) {
+                    reversedWord += word[i];
+                }
+                reversedWords.push(reversedWord);
+            }
+
+            const reversedSentence = reversedWords.join(' ');
+            document.getElementById("output").textContent = reversedSentence;
+        }
+    </script>
+</body>
+</html>
